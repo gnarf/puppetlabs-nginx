@@ -28,6 +28,10 @@ class nginx::config inherits nginx::params {
     ensure => directory,
   }
 
+  file { "${nginx::params::nx_conf_dir}/core.d":
+    ensure => directory,
+  }
+
   file { "${nginx::config::nx_run_dir}":
     ensure => directory,
   }

@@ -1,4 +1,5 @@
 user <%= scope.lookupvar('nginx::config::nx_daemon_user') %>;
+include /etc/nginx/core.d/*.conf;
 worker_processes <%= scope.lookupvar('nginx::params::nx_worker_processes')%>;
 
 error_log  <%= scope.lookupvar('nginx::params::nx_logdir')%>/error.log;
@@ -31,3 +32,4 @@ http {
 
   include /etc/nginx/conf.d/*.conf;
 }
+
