@@ -35,6 +35,7 @@ define nginx::resource::vhost(
   $ensure             = 'enable',
   $listen_ip          = '*',
   $listen_port        = '80',
+  $aliases            = "",
   $ipv6_enable        = false,
   $ipv6_listen_ip     = '::',
   $ipv6_listen_port   = '80',
@@ -44,7 +45,7 @@ define nginx::resource::vhost(
   $proxy              = undef,
   $proxy_read_timeout = $nginx::params::nx_proxy_read_timeout,
   $index_files        = ['index.html', 'index.htm', 'index.php'],
-  $www_root           = undef
+  $www_root           = undef,
 ) {
 
   File {
