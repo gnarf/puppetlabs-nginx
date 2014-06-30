@@ -53,4 +53,6 @@ class nginx::params {
     /(?i-mx:debian|ubuntu)/                    => 'www-data',
     /(?i-mx:fedora|rhel|centos|suse|opensuse)/ => 'nginx',
   }
+
+  $nx_variables_hash_max_size = 1024
 }
